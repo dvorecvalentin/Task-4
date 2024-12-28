@@ -1,0 +1,5 @@
+---
+- name: Restart application
+  systemd:
+    name: my-app
+    state: restarted

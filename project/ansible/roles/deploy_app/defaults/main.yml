@@ -1,0 +1,2 @@
+app_env: production
+database_url: "postgres://user:password@localhost/db"

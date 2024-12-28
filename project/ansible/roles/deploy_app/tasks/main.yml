@@ -1,0 +1,16 @@
+---
+- name: Copy application binary
+  copy:
+    src: app_binary
+    dest: /usr/local/bin/my-app
+    mode: '0755'
+
+- name: Deploy configuration
+  template:
+    src: app_config.j2
+    dest: /etc/my-app/config.yml
+
+- name: Restart application service
+  systemd:
+    name: my-app
+    state: restarted
